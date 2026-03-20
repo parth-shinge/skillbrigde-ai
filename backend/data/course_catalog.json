@@ -1,0 +1,682 @@
+[
+  {
+    "id": "PY-001",
+    "title": "Python Fundamentals",
+    "domain": "Python Programming",
+    "description": "An entry-level course covering Python syntax, variables, control flow, and basic I/O operations for absolute beginners.",
+    "skills_taught": ["python", "programming-fundamentals", "debugging"],
+    "prerequisite_ids": [],
+    "level": "beginner",
+    "duration_hours": 3,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Write and execute Python scripts using variables, loops, and conditionals",
+      "Use built-in data types including strings, integers, floats, and booleans",
+      "Debug common syntax and runtime errors using tracebacks"
+    ],
+    "assessment_type": "coding-exercise"
+  },
+  {
+    "id": "PY-002",
+    "title": "Python Data Structures & Functions",
+    "domain": "Python Programming",
+    "description": "Build on Python basics with lists, dictionaries, sets, tuples, and reusable function design including scope and closures.",
+    "skills_taught": ["python", "data-structures", "functional-programming"],
+    "prerequisite_ids": ["PY-001"],
+    "level": "beginner",
+    "duration_hours": 4,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Implement and manipulate lists, dictionaries, sets, and tuples effectively",
+      "Design reusable functions with parameters, return values, and default arguments",
+      "Apply list comprehensions and lambda functions to transform data"
+    ],
+    "assessment_type": "coding-exercise"
+  },
+  {
+    "id": "PY-003",
+    "title": "Intermediate Python Programming",
+    "domain": "Python Programming",
+    "description": "Explore intermediate concepts including file handling, error management, modules, packages, and working with external libraries.",
+    "skills_taught": ["python", "file-handling", "error-handling", "package-management"],
+    "prerequisite_ids": ["PY-002"],
+    "level": "intermediate",
+    "duration_hours": 6,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Read, write, and process files in multiple formats including CSV and JSON",
+      "Implement robust error handling with try/except blocks and custom exceptions",
+      "Install, import, and manage third-party packages using pip and virtual environments"
+    ],
+    "assessment_type": "coding-project"
+  },
+  {
+    "id": "PY-004",
+    "title": "Advanced Python & Object-Oriented Programming",
+    "domain": "Python Programming",
+    "description": "Master object-oriented design patterns, decorators, generators, context managers, and advanced Pythonic idioms.",
+    "skills_taught": ["python", "object-oriented-programming", "design-patterns"],
+    "prerequisite_ids": ["PY-003"],
+    "level": "advanced",
+    "duration_hours": 8,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Design class hierarchies using inheritance, polymorphism, and composition",
+      "Implement decorators, generators, and context managers for clean abstractions",
+      "Apply common design patterns including singleton, factory, and observer in Python"
+    ],
+    "assessment_type": "coding-project"
+  },
+  {
+    "id": "PY-005",
+    "title": "Python for Enterprise Applications",
+    "domain": "Python Programming",
+    "description": "Build production-grade Python applications with concurrency, testing frameworks, performance profiling, and API development.",
+    "skills_taught": ["python", "api-development", "testing", "concurrency"],
+    "prerequisite_ids": ["PY-004"],
+    "level": "advanced",
+    "duration_hours": 10,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Build RESTful APIs using FastAPI with request validation and middleware",
+      "Write comprehensive unit and integration tests using pytest",
+      "Implement concurrent execution using asyncio, threading, and multiprocessing"
+    ],
+    "assessment_type": "capstone-project"
+  },
+  {
+    "id": "DA-001",
+    "title": "Introduction to Databases & SQL",
+    "domain": "Data & SQL",
+    "description": "Learn relational database concepts, basic SQL queries, filtering, sorting, and simple joins for data retrieval.",
+    "skills_taught": ["sql", "database-fundamentals", "data-retrieval"],
+    "prerequisite_ids": [],
+    "level": "beginner",
+    "duration_hours": 3,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Write SELECT queries with WHERE, ORDER BY, and LIMIT clauses",
+      "Perform INNER JOIN and LEFT JOIN operations across related tables",
+      "Create and modify tables using DDL statements including CREATE, ALTER, and DROP"
+    ],
+    "assessment_type": "coding-exercise"
+  },
+  {
+    "id": "DA-002",
+    "title": "Intermediate SQL & Data Modeling",
+    "domain": "Data & SQL",
+    "description": "Master subqueries, aggregate functions, window functions, and entity-relationship modeling for normalized database design.",
+    "skills_taught": ["sql", "data-modeling", "data-analysis"],
+    "prerequisite_ids": ["DA-001"],
+    "level": "intermediate",
+    "duration_hours": 5,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Write complex queries using subqueries, CTEs, and window functions",
+      "Design normalized database schemas using entity-relationship diagrams",
+      "Aggregate and summarize data using GROUP BY, HAVING, and analytic functions"
+    ],
+    "assessment_type": "coding-exercise"
+  },
+  {
+    "id": "DA-003",
+    "title": "Advanced SQL & Query Optimization",
+    "domain": "Data & SQL",
+    "description": "Optimize query performance through indexing strategies, execution plans, partitioning, and advanced join techniques.",
+    "skills_taught": ["sql", "query-optimization", "database-administration"],
+    "prerequisite_ids": ["DA-002"],
+    "level": "advanced",
+    "duration_hours": 6,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Analyze and optimize query execution plans for performance bottlenecks",
+      "Implement indexing strategies including composite, partial, and covering indexes",
+      "Apply table partitioning and materialized views for large-scale data management"
+    ],
+    "assessment_type": "practical-exam"
+  },
+  {
+    "id": "DA-004",
+    "title": "Data Warehousing & ETL Pipelines",
+    "domain": "Data & SQL",
+    "description": "Design data warehouses with star and snowflake schemas and build automated ETL pipelines for enterprise analytics.",
+    "skills_taught": ["sql", "etl", "data-warehousing", "data-pipelines"],
+    "prerequisite_ids": ["DA-003"],
+    "level": "advanced",
+    "duration_hours": 8,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Design star and snowflake schemas for analytical data warehouses",
+      "Build ETL pipelines that extract, transform, and load data from multiple sources",
+      "Implement data quality checks and monitoring for pipeline reliability"
+    ],
+    "assessment_type": "capstone-project"
+  },
+  {
+    "id": "ML-001",
+    "title": "Introduction to Machine Learning",
+    "domain": "Machine Learning",
+    "description": "Understand core ML concepts including supervised vs unsupervised learning, model evaluation, and the scikit-learn workflow.",
+    "skills_taught": ["machine-learning", "data-analysis", "statistical-analysis"],
+    "prerequisite_ids": ["PY-003", "DA-002"],
+    "level": "intermediate",
+    "duration_hours": 6,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Distinguish between supervised, unsupervised, and reinforcement learning paradigms",
+      "Evaluate model performance using accuracy, precision, recall, and F1 score",
+      "Build end-to-end ML pipelines using scikit-learn including preprocessing and cross-validation"
+    ],
+    "assessment_type": "coding-project"
+  },
+  {
+    "id": "ML-002",
+    "title": "Supervised Learning Algorithms",
+    "domain": "Machine Learning",
+    "description": "Deep dive into regression, classification, ensemble methods, and hyperparameter tuning for predictive modeling.",
+    "skills_taught": ["machine-learning", "supervised-learning", "feature-engineering"],
+    "prerequisite_ids": ["ML-001"],
+    "level": "intermediate",
+    "duration_hours": 7,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Implement linear regression, logistic regression, and decision tree classifiers",
+      "Apply ensemble methods including random forests and gradient boosting machines",
+      "Perform hyperparameter tuning using grid search and randomized search with cross-validation"
+    ],
+    "assessment_type": "coding-project"
+  },
+  {
+    "id": "ML-003",
+    "title": "Deep Learning Fundamentals",
+    "domain": "Machine Learning",
+    "description": "Build and train neural networks using PyTorch, covering architectures from feedforward networks to CNNs and RNNs.",
+    "skills_taught": ["deep-learning", "neural-networks", "data-visualization"],
+    "prerequisite_ids": ["ML-002"],
+    "level": "advanced",
+    "duration_hours": 9,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Build and train feedforward neural networks using PyTorch from scratch",
+      "Implement convolutional neural networks for image classification tasks",
+      "Visualize training metrics and diagnose overfitting using learning curves"
+    ],
+    "assessment_type": "capstone-project"
+  },
+  {
+    "id": "ML-004",
+    "title": "MLOps & Model Deployment",
+    "domain": "Machine Learning",
+    "description": "Deploy ML models to production with containerization, monitoring, A/B testing, and automated retraining pipelines.",
+    "skills_taught": ["mlops", "model-deployment", "automation"],
+    "prerequisite_ids": ["ML-003"],
+    "level": "advanced",
+    "duration_hours": 8,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Package and deploy ML models as REST APIs using Docker and FastAPI",
+      "Implement model monitoring dashboards to track drift and degradation",
+      "Design automated retraining pipelines triggered by performance thresholds"
+    ],
+    "assessment_type": "capstone-project"
+  },
+  {
+    "id": "CD-001",
+    "title": "Introduction to Cloud Computing",
+    "domain": "Cloud & DevOps",
+    "description": "Explore cloud computing fundamentals including IaaS, PaaS, SaaS models, and core AWS services for compute, storage, and networking.",
+    "skills_taught": ["cloud-computing", "aws", "networking"],
+    "prerequisite_ids": ["PY-002"],
+    "level": "beginner",
+    "duration_hours": 4,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Differentiate between IaaS, PaaS, and SaaS cloud service models",
+      "Provision and configure EC2 instances, S3 buckets, and VPC networks on AWS",
+      "Understand cloud security fundamentals including IAM roles and security groups"
+    ],
+    "assessment_type": "quiz"
+  },
+  {
+    "id": "CD-002",
+    "title": "Docker & Containerization",
+    "domain": "Cloud & DevOps",
+    "description": "Master container fundamentals with Docker, including images, volumes, networking, and multi-container applications with Docker Compose.",
+    "skills_taught": ["docker", "containerization", "linux"],
+    "prerequisite_ids": ["CD-001"],
+    "level": "intermediate",
+    "duration_hours": 5,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Build optimized Docker images using multi-stage builds and layer caching",
+      "Orchestrate multi-container applications with Docker Compose and shared networks",
+      "Manage persistent data with Docker volumes and bind mounts"
+    ],
+    "assessment_type": "coding-exercise"
+  },
+  {
+    "id": "CD-003",
+    "title": "Kubernetes & Orchestration",
+    "domain": "Cloud & DevOps",
+    "description": "Deploy and manage containerized applications at scale using Kubernetes concepts including pods, services, deployments, and scaling.",
+    "skills_taught": ["kubernetes", "container-orchestration", "system-design"],
+    "prerequisite_ids": ["CD-002"],
+    "level": "intermediate",
+    "duration_hours": 7,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Deploy applications using Kubernetes pods, services, and deployments",
+      "Configure horizontal pod autoscaling and resource limits for production workloads",
+      "Manage application configuration with ConfigMaps and Secrets"
+    ],
+    "assessment_type": "practical-exam"
+  },
+  {
+    "id": "CD-004",
+    "title": "CI/CD & Infrastructure as Code",
+    "domain": "Cloud & DevOps",
+    "description": "Automate software delivery pipelines with GitHub Actions and manage infrastructure declaratively using Terraform.",
+    "skills_taught": ["ci-cd", "infrastructure-as-code", "git", "automation"],
+    "prerequisite_ids": ["CD-003"],
+    "level": "advanced",
+    "duration_hours": 8,
+    "job_categories": ["technical"],
+    "learning_objectives": [
+      "Design multi-stage CI/CD pipelines with automated testing and deployment gates",
+      "Provision and manage cloud infrastructure declaratively using Terraform modules",
+      "Implement GitOps workflows with branch protection rules and automated rollbacks"
+    ],
+    "assessment_type": "capstone-project"
+  },
+  {
+    "id": "PM-001",
+    "title": "Fundamentals of Project Management",
+    "domain": "Project Management",
+    "description": "Learn project management essentials including project lifecycle phases, scope definition, scheduling, and basic resource planning.",
+    "skills_taught": ["project-management", "planning", "time-management"],
+    "prerequisite_ids": [],
+    "level": "beginner",
+    "duration_hours": 3,
+    "job_categories": ["technical", "operational"],
+    "learning_objectives": [
+      "Define project scope, objectives, and deliverables using a project charter",
+      "Create work breakdown structures and Gantt charts for project scheduling",
+      "Identify and allocate resources across project phases effectively"
+    ],
+    "assessment_type": "quiz"
+  },
+  {
+    "id": "PM-002",
+    "title": "Agile & Scrum Methodologies",
+    "domain": "Project Management",
+    "description": "Master Agile principles, Scrum ceremonies, sprint planning, backlog management, and iterative delivery practices.",
+    "skills_taught": ["agile-methodology", "scrum", "collaboration"],
+    "prerequisite_ids": ["PM-001"],
+    "level": "intermediate",
+    "duration_hours": 5,
+    "job_categories": ["technical", "operational"],
+    "learning_objectives": [
+      "Facilitate Scrum ceremonies including sprint planning, daily standups, and retrospectives",
+      "Create and prioritize product backlogs using user stories and acceptance criteria",
+      "Track team velocity and use burndown charts to forecast sprint completion"
+    ],
+    "assessment_type": "case-study"
+  },
+  {
+    "id": "PM-003",
+    "title": "Risk Management & Stakeholder Communication",
+    "domain": "Project Management",
+    "description": "Identify, assess, and mitigate project risks while maintaining effective stakeholder communication and reporting.",
+    "skills_taught": ["risk-management", "stakeholder-management", "communication"],
+    "prerequisite_ids": ["PM-002"],
+    "level": "intermediate",
+    "duration_hours": 5,
+    "job_categories": ["technical", "operational"],
+    "learning_objectives": [
+      "Build and maintain a risk register with probability, impact, and mitigation strategies",
+      "Create stakeholder communication plans tailored to different audience levels",
+      "Design project status dashboards and executive summary reports"
+    ],
+    "assessment_type": "case-study"
+  },
+  {
+    "id": "PM-004",
+    "title": "Advanced Program Management",
+    "domain": "Project Management",
+    "description": "Manage multi-project programs with cross-team dependencies, portfolio prioritization, and organizational change governance.",
+    "skills_taught": ["program-management", "strategic-planning", "decision-making"],
+    "prerequisite_ids": ["PM-003"],
+    "level": "advanced",
+    "duration_hours": 7,
+    "job_categories": ["technical", "operational"],
+    "learning_objectives": [
+      "Coordinate cross-team dependencies across multiple concurrent projects",
+      "Prioritize project portfolios using ROI analysis and strategic alignment scoring",
+      "Establish governance frameworks for program-level decision making and escalation"
+    ],
+    "assessment_type": "case-study"
+  },
+  {
+    "id": "CS-001",
+    "title": "Effective Business Communication",
+    "domain": "Communication & Soft Skills",
+    "description": "Develop clear, concise written and verbal communication skills for professional settings including emails, reports, and meetings.",
+    "skills_taught": ["communication", "written-communication", "active-listening"],
+    "prerequisite_ids": [],
+    "level": "beginner",
+    "duration_hours": 2,
+    "job_categories": ["technical", "operational"],
+    "learning_objectives": [
+      "Write professional emails and reports with clear structure and actionable language",
+      "Practice active listening techniques to improve meeting participation and retention",
+      "Adapt communication style for different audiences including peers, managers, and clients"
+    ],
+    "assessment_type": "peer-review"
+  },
+  {
+    "id": "CS-002",
+    "title": "Presentation & Public Speaking",
+    "domain": "Communication & Soft Skills",
+    "description": "Build confidence in public speaking and create impactful presentations using storytelling, visual design, and audience engagement techniques.",
+    "skills_taught": ["presentation", "public-speaking", "storytelling"],
+    "prerequisite_ids": [],
+    "level": "beginner",
+    "duration_hours": 3,
+    "job_categories": ["technical", "operational"],
+    "learning_objectives": [
+      "Structure presentations with a compelling narrative arc and clear takeaways",
+      "Design visually effective slides using data visualization best practices",
+      "Manage presentation anxiety and engage audiences with questions and interaction"
+    ],
+    "assessment_type": "peer-review"
+  },
+  {
+    "id": "CS-003",
+    "title": "Negotiation & Conflict Resolution",
+    "domain": "Communication & Soft Skills",
+    "description": "Learn principled negotiation strategies and conflict resolution frameworks to navigate workplace disagreements constructively.",
+    "skills_taught": ["negotiation", "conflict-resolution", "emotional-intelligence"],
+    "prerequisite_ids": [],
+    "level": "intermediate",
+    "duration_hours": 4,
+    "job_categories": ["technical", "operational"],
+    "learning_objectives": [
+      "Apply the principled negotiation framework to reach mutually beneficial agreements",
+      "Identify and de-escalate workplace conflicts using mediation techniques",
+      "Recognize and manage emotional triggers to maintain productive dialogue"
+    ],
+    "assessment_type": "role-play"
+  },
+  {
+    "id": "CS-004",
+    "title": "Cross-Cultural Communication",
+    "domain": "Communication & Soft Skills",
+    "description": "Navigate cultural differences in global teams with awareness of communication styles, norms, and inclusive collaboration practices.",
+    "skills_taught": ["cross-cultural-communication", "adaptability", "teamwork"],
+    "prerequisite_ids": [],
+    "level": "intermediate",
+    "duration_hours": 4,
+    "job_categories": ["technical", "operational"],
+    "learning_objectives": [
+      "Identify and adapt to different cultural communication dimensions and preferences",
+      "Facilitate inclusive meetings that accommodate diverse working styles and time zones",
+      "Recognize and mitigate unconscious biases in cross-cultural team interactions"
+    ],
+    "assessment_type": "case-study"
+  },
+  {
+    "id": "LM-001",
+    "title": "Foundations of Leadership",
+    "domain": "Leadership & Management",
+    "description": "Explore core leadership theories, self-awareness, and the difference between management and leadership in modern organizations.",
+    "skills_taught": ["team-leadership", "self-awareness", "mentoring"],
+    "prerequisite_ids": ["PM-002"],
+    "level": "intermediate",
+    "duration_hours": 5,
+    "job_categories": ["technical", "operational"],
+    "learning_objectives": [
+      "Assess personal leadership style using self-evaluation frameworks",
+      "Distinguish between transactional and transformational leadership approaches",
+      "Apply situational leadership techniques based on team maturity and task complexity"
+    ],
+    "assessment_type": "self-assessment"
+  },
+  {
+    "id": "LM-002",
+    "title": "Team Building & Motivation",
+    "domain": "Leadership & Management",
+    "description": "Build high-performing teams through trust, psychological safety, motivation strategies, and effective delegation patterns.",
+    "skills_taught": ["team-leadership", "collaboration", "performance-management"],
+    "prerequisite_ids": ["LM-001"],
+    "level": "intermediate",
+    "duration_hours": 5,
+    "job_categories": ["technical", "operational"],
+    "learning_objectives": [
+      "Create a team charter that defines shared values, norms, and accountability structures",
+      "Apply motivation theories to design recognition and growth opportunities for team members",
+      "Delegate tasks effectively by matching assignments to individual strengths and development goals"
+    ],
+    "assessment_type": "case-study"
+  },
+  {
+    "id": "LM-003",
+    "title": "Strategic Decision Making",
+    "domain": "Leadership & Management",
+    "description": "Make data-informed decisions under uncertainty using analytical frameworks, cognitive bias awareness, and scenario planning.",
+    "skills_taught": ["decision-making", "critical-thinking", "strategic-planning"],
+    "prerequisite_ids": ["LM-002"],
+    "level": "advanced",
+    "duration_hours": 6,
+    "job_categories": ["technical", "operational"],
+    "learning_objectives": [
+      "Apply structured decision frameworks including decision matrices and cost-benefit analysis",
+      "Identify and mitigate cognitive biases in individual and group decision-making processes",
+      "Conduct scenario planning exercises to prepare for multiple strategic outcomes"
+    ],
+    "assessment_type": "case-study"
+  },
+  {
+    "id": "LM-004",
+    "title": "Executive Leadership & Change Management",
+    "domain": "Leadership & Management",
+    "description": "Lead organizational transformations using change management frameworks, executive communication, and culture shaping strategies.",
+    "skills_taught": ["change-management", "executive-leadership", "stakeholder-management"],
+    "prerequisite_ids": ["LM-003"],
+    "level": "advanced",
+    "duration_hours": 7,
+    "job_categories": ["technical", "operational"],
+    "learning_objectives": [
+      "Design and execute organizational change initiatives using the ADKAR framework",
+      "Communicate a compelling vision and strategic narrative to drive organizational alignment",
+      "Measure change adoption and resistance using quantitative and qualitative feedback loops"
+    ],
+    "assessment_type": "capstone-project"
+  },
+  {
+    "id": "OL-001",
+    "title": "Introduction to Operations Management",
+    "domain": "Operations & Logistics",
+    "description": "Understand core operations principles including process mapping, capacity planning, bottleneck analysis, and efficiency metrics.",
+    "skills_taught": ["operations-management", "process-improvement", "problem-solving"],
+    "prerequisite_ids": [],
+    "level": "beginner",
+    "duration_hours": 3,
+    "job_categories": ["operational"],
+    "learning_objectives": [
+      "Map end-to-end business processes using flowcharts and swim lane diagrams",
+      "Calculate and interpret key operations metrics including throughput, cycle time, and utilization",
+      "Identify bottlenecks and propose process improvements using the Theory of Constraints"
+    ],
+    "assessment_type": "quiz"
+  },
+  {
+    "id": "OL-002",
+    "title": "Supply Chain Fundamentals",
+    "domain": "Operations & Logistics",
+    "description": "Learn supply chain concepts from procurement to delivery, including supplier management, demand forecasting, and logistics coordination.",
+    "skills_taught": ["supply-chain-management", "demand-forecasting", "procurement"],
+    "prerequisite_ids": [],
+    "level": "beginner",
+    "duration_hours": 4,
+    "job_categories": ["operational"],
+    "learning_objectives": [
+      "Describe end-to-end supply chain stages from raw materials to customer delivery",
+      "Apply basic demand forecasting methods including moving averages and trend analysis",
+      "Evaluate supplier performance using scorecards and total cost of ownership analysis"
+    ],
+    "assessment_type": "quiz"
+  },
+  {
+    "id": "OL-003",
+    "title": "Inventory & Warehouse Management",
+    "domain": "Operations & Logistics",
+    "description": "Master inventory control methods including ABC analysis, reorder points, safety stock calculations, and warehouse layout optimization.",
+    "skills_taught": ["inventory-management", "warehouse-management", "quality-control"],
+    "prerequisite_ids": [],
+    "level": "intermediate",
+    "duration_hours": 5,
+    "job_categories": ["operational"],
+    "learning_objectives": [
+      "Classify inventory using ABC analysis and set appropriate control policies for each tier",
+      "Calculate economic order quantities, reorder points, and safety stock levels",
+      "Design warehouse layouts that minimize pick paths and maximize storage efficiency"
+    ],
+    "assessment_type": "practical-exam"
+  },
+  {
+    "id": "OL-004",
+    "title": "Lean Operations & Process Improvement",
+    "domain": "Operations & Logistics",
+    "description": "Apply Lean and Six Sigma methodologies to eliminate waste, reduce variation, and continuously improve operational processes.",
+    "skills_taught": ["lean-operations", "process-improvement", "quality-control"],
+    "prerequisite_ids": [],
+    "level": "intermediate",
+    "duration_hours": 6,
+    "job_categories": ["operational"],
+    "learning_objectives": [
+      "Identify and eliminate the eight types of waste using Lean analysis tools",
+      "Conduct DMAIC improvement projects using Six Sigma statistical methods",
+      "Facilitate kaizen events to drive rapid, team-based process improvements"
+    ],
+    "assessment_type": "case-study"
+  },
+  {
+    "id": "OL-005",
+    "title": "Advanced Logistics & Distribution",
+    "domain": "Operations & Logistics",
+    "description": "Optimize distribution networks, transportation routing, last-mile delivery, and reverse logistics for complex supply chains.",
+    "skills_taught": ["logistics", "supply-chain-management", "strategic-planning"],
+    "prerequisite_ids": [],
+    "level": "advanced",
+    "duration_hours": 7,
+    "job_categories": ["operational"],
+    "learning_objectives": [
+      "Design distribution network configurations balancing cost, speed, and service levels",
+      "Optimize transportation routing using constraint-based scheduling algorithms",
+      "Implement reverse logistics processes for returns, recycling, and circular supply chains"
+    ],
+    "assessment_type": "capstone-project"
+  },
+  {
+    "id": "SC-001",
+    "title": "Workplace Safety Fundamentals",
+    "domain": "Safety & Compliance",
+    "description": "Learn essential workplace safety principles including hazard identification, PPE requirements, and emergency response procedures.",
+    "skills_taught": ["workplace-safety", "risk-assessment", "incident-reporting"],
+    "prerequisite_ids": [],
+    "level": "beginner",
+    "duration_hours": 2,
+    "job_categories": ["operational"],
+    "learning_objectives": [
+      "Identify common workplace hazards and apply the hierarchy of controls to mitigate them",
+      "Select and use appropriate personal protective equipment for various task environments",
+      "Execute emergency response procedures including evacuation, first aid, and incident reporting"
+    ],
+    "assessment_type": "quiz"
+  },
+  {
+    "id": "SC-002",
+    "title": "Regulatory Compliance & Standards",
+    "domain": "Safety & Compliance",
+    "description": "Understand industry regulations, compliance frameworks, audit preparation, and documentation requirements for operational excellence.",
+    "skills_taught": ["regulatory-compliance", "quality-control", "written-communication"],
+    "prerequisite_ids": [],
+    "level": "intermediate",
+    "duration_hours": 5,
+    "job_categories": ["operational"],
+    "learning_objectives": [
+      "Interpret and apply relevant OSHA, ISO, and industry-specific regulatory requirements",
+      "Prepare for compliance audits by organizing documentation and evidence trails",
+      "Develop standard operating procedures that embed regulatory requirements into daily workflows"
+    ],
+    "assessment_type": "case-study"
+  },
+  {
+    "id": "SC-003",
+    "title": "Environmental Health & Safety Management",
+    "domain": "Safety & Compliance",
+    "description": "Manage comprehensive EHS programs including environmental impact assessments, safety culture development, and continuous improvement.",
+    "skills_taught": ["environmental-health", "workplace-safety", "risk-assessment"],
+    "prerequisite_ids": [],
+    "level": "advanced",
+    "duration_hours": 7,
+    "job_categories": ["operational"],
+    "learning_objectives": [
+      "Design and implement environmental management systems aligned with ISO 14001",
+      "Conduct root cause analysis using investigation frameworks including 5-Why and fishbone diagrams",
+      "Build a safety culture program with leading indicators, training cadences, and recognition systems"
+    ],
+    "assessment_type": "capstone-project"
+  },
+  {
+    "id": "BA-001",
+    "title": "Excel Fundamentals & Data Entry",
+    "domain": "Excel & Business Analytics",
+    "description": "Master essential spreadsheet skills including data entry, formatting, formulas, basic charts, and workbook management.",
+    "skills_taught": ["excel", "data-entry", "data-visualization"],
+    "prerequisite_ids": [],
+    "level": "beginner",
+    "duration_hours": 3,
+    "job_categories": ["operational", "analytical"],
+    "learning_objectives": [
+      "Navigate the Excel interface and manage workbooks, worksheets, and cell formatting",
+      "Write formulas using SUM, AVERAGE, VLOOKUP, IF, and COUNTIF functions",
+      "Create column, bar, and line charts to visualize data trends"
+    ],
+    "assessment_type": "coding-exercise"
+  },
+  {
+    "id": "BA-002",
+    "title": "Advanced Excel & Pivot Tables",
+    "domain": "Excel & Business Analytics",
+    "description": "Build dynamic reports with pivot tables, advanced formulas, conditional formatting, data validation, and macro basics.",
+    "skills_taught": ["excel", "data-analysis", "reporting"],
+    "prerequisite_ids": ["BA-001"],
+    "level": "intermediate",
+    "duration_hours": 5,
+    "job_categories": ["operational", "analytical"],
+    "learning_objectives": [
+      "Build interactive pivot tables and pivot charts for multi-dimensional data analysis",
+      "Apply advanced formulas including INDEX-MATCH, nested IFs, and array formulas",
+      "Automate repetitive tasks using basic macros and the VBA editor"
+    ],
+    "assessment_type": "coding-exercise"
+  },
+  {
+    "id": "BA-003",
+    "title": "Business Analytics & Dashboarding",
+    "domain": "Excel & Business Analytics",
+    "description": "Transform raw business data into actionable insights through KPI identification, dashboard design, and data storytelling techniques.",
+    "skills_taught": ["data-analysis", "data-visualization", "reporting", "critical-thinking"],
+    "prerequisite_ids": ["BA-002"],
+    "level": "advanced",
+    "duration_hours": 7,
+    "job_categories": ["operational", "analytical"],
+    "learning_objectives": [
+      "Identify and define key performance indicators aligned with business objectives",
+      "Design interactive dashboards that enable self-service data exploration",
+      "Present data-driven recommendations using structured storytelling frameworks"
+    ],
+    "assessment_type": "capstone-project"
+  }
+]
