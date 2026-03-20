@@ -67,14 +67,14 @@ export const ReasoningPanel = () => {
                   <div className="flex justify-between items-start mb-2 ml-1">
                     <span className="text-sm font-bold text-[#F1F5F9]">{trace.skill_addressed}</span>
                     <span className="text-[10px] uppercase font-bold text-[#10B981] bg-[#10B981]/10 px-1.5 py-0.5 rounded">
-                      {trace.confidence}% Conf
+                      {Math.round(trace.confidence * 100)}% Conf
                     </span>
                   </div>
 
                   <div className="w-full h-1 bg-[#334155] rounded-full overflow-hidden mb-3 ml-1">
                     <div 
                       className="h-full bg-[#EF4444]" 
-                      style={{ width: `${trace.gap_score}%` }} 
+                      style={{ width: `${trace.gap_score * 100}%` }} 
                     />
                   </div>
 

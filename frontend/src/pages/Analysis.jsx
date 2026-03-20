@@ -70,9 +70,10 @@ export default function Analysis() {
     };
   }).sort((a,b) => b.level - a.level).slice(0, 8);
 
-  const readinessColor = overallReadiness >= 75 ? "#10B981" : overallReadiness >= 50 ? "#F59E0B" : "#EF4444";
+  const readinessColor = overallReadiness >= 0.75 ? '#10B981' : overallReadiness >= 0.50 ? '#F59E0B' : '#EF4444';
   const circumference = 2 * Math.PI * 120;
-  const strokeDashoffset = circumference - (overallReadiness / 100) * circumference;
+  const fillRatio = overallReadiness > 1 ? overallReadiness / 100 : overallReadiness;
+  const strokeDashoffset = circumference - fillRatio * circumference;
 
   return (
     <div className="w-full flex flex-col bg-[#0F172A] min-h-screen pb-20">
@@ -100,11 +101,11 @@ export default function Analysis() {
             />
           </svg>
           <div className="absolute flex flex-col items-center text-center">
-            <span className="text-5xl font-bold font-['Outfit'] text-[#F1F5F9]">{overallReadiness}%</span>
+            <span className="text-5xl font-bold font-['Outfit'] text-[#F1F5F9]">{overallReadiness > 1 ? overallReadiness.toFixed(1) : (overallReadiness * 100).toFixed(1)}%</span>
             <span className="text-sm font-medium text-[#94A3B8] mt-1 uppercase tracking-widest">Match</span>
           </div>
         </div>
-        <p className="text-lg text-[#94A3B8]">You're <strong style={{ color: readinessColor }}>{overallReadiness}% ready</strong> for this role.</p>
+        <p className="text-lg text-[#94A3B8]">You're <strong style={{ color: readinessColor }}>{overallReadiness > 1 ? overallReadiness.toFixed(1) : (overallReadiness * 100).toFixed(1)}% ready</strong> for this role.</p>
       </section>
 
       {/* MIDDLE - Charts */}
@@ -214,11 +215,11 @@ export default function Analysis() {
                       <div className="flex items-center justify-end gap-2">
                         <div className="w-24 h-1.5 bg-[#334155] rounded-full overflow-hidden">
                           <div 
-                            className={`h-full ${gap.gap_score >= 80 ? 'bg-[#EF4444]' : gap.gap_score >= 50 ? 'bg-[#F59E0B]' : 'bg-[#10B981]'}`} 
-                            style={{ width: `${gap.gap_score}%` }}
+                            className={`h-full ${gap.gap_score * 100 >= 80 ? 'bg-[#EF4444]' : gap.gap_score * 100 >= 50 ? 'bg-[#F59E0B]' : 'bg-[#10B981]'}`} 
+                            style={{ width: `${gap.gap_score * 100}%` }}
                           />
                         </div>
-                        <span className="text-sm text-[#94A3B8] w-8">{Math.round(gap.gap_score)}</span>
+                        <span className="text-sm text-[#94A3B8] w-8">{Math.round(gap.gap_score * 100)}</span>
                       </div>
                     </td>
                     <td className="p-4">
