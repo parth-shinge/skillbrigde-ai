@@ -414,15 +414,6 @@ SkillBridge supports both technical and operational roles through a unified cour
 | **Time Efficiency %** | Hours saved vs. standard onboarding ÷ standard hours × 100 | ≥ 30% |
 | **Prerequisite Validity** | % of pathway orderings that satisfy all prerequisite constraints | 100% |
 
-## 🤝 Team
-
-| Name | Role | Contribution |
-|---|---|---|
-| *Team Member 1* | Lead Developer | Backend architecture, pathway algorithm |
-| *Team Member 2* | Frontend Developer | React UI, visualizations, PDF export |
-| *Team Member 3* | ML Engineer | Skill extraction, gap analysis, embeddings |
-| *Team Member 4* | Product & Docs | UX design, documentation, evaluation |
-
 ## 📜 License
 
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
