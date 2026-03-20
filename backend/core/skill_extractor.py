@@ -1,6 +1,6 @@
 """
 Skill extraction module for SkillBridge AI.
-Uses Claude API to extract and normalize skills from resume/JD text.
+Uses Gemini API to extract and normalize skills from resume/JD text.
 """
 
 import json
@@ -9,11 +9,11 @@ import re
 from pathlib import Path
 
 from dotenv import load_dotenv
-import anthropic
+import google.generativeai as genai
 
 load_dotenv()
 
-_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 # Load O*NET skills taxonomy for normalization
 _ONET_SKILLS_PATH = Path(__file__).parent.parent / "data" / "onet_skills.json"
@@ -87,7 +87,7 @@ SYSTEM_PROMPT = (
 
 
 async def extract_skills(text: str, source: str) -> list[dict]:
-    """Extract skills from text using Claude API.
+    """Extract skills from text using Gemini API.
 
     Args:
         text: Resume or job description text content.
@@ -97,21 +97,18 @@ async def extract_skills(text: str, source: str) -> list[dict]:
         List of skill dicts with name, proficiency, and years fields.
 
     Raises:
-        RuntimeError: If Claude API call fails or response parsing fails.
+        RuntimeError: If Gemini API call fails or response parsing fails.
     """
     _load_onet_skills()
 
     user_message = f"Extract skills from this {source}:\n\n{text[:8000]}"
+    prompt = f"{SYSTEM_PROMPT}\n\n{user_message}"
 
     try:
-        response = _client.messages.create(
-            model="claude-sonnet-4-6",
-            max_tokens=4096,
-            system=SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": user_message}],
-        )
+        model = genai.GenerativeModel("gemini-1.5-flash")
+        response = model.generate_content(prompt)
+        raw_text = response.text.strip()
 
-        raw_text = response.content[0].text.strip()
         parsed = _parse_json_response(raw_text)
         skills = parsed.get("skills", [])
 
@@ -131,17 +128,15 @@ async def extract_skills(text: str, source: str) -> list[dict]:
         print(f"[EXTRACT] Extracted {len(normalized_skills)} skills from {source}")
         return normalized_skills
 
-    except anthropic.APIError as e:
-        raise RuntimeError(f"Claude API error during skill extraction: {str(e)}")
     except Exception as e:
         raise RuntimeError(f"Skill extraction failed: {str(e)}")
 
 
 def _parse_json_response(raw: str) -> dict:
-    """Parse JSON from Claude's response, stripping markdown fences if present.
+    """Parse JSON from Gemini's response, stripping markdown fences if present.
 
     Args:
-        raw: Raw text response from Claude.
+        raw: Raw text response from Gemini.
 
     Returns:
         Parsed JSON as a dict.
@@ -168,4 +163,4 @@ def _parse_json_response(raw: str) -> dict:
                 return json.loads(match.group())
             except json.JSONDecodeError:
                 pass
-        raise ValueError(f"Failed to parse JSON from Claude response: {raw[:200]}")
+        raise ValueError(f"Failed to parse JSON from Gemini response: {raw[:200]}")
