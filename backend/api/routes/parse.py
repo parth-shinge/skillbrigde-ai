@@ -3,6 +3,7 @@ Parse API route for SkillBridge AI.
 Handles resume and job description upload, text extraction, and skill parsing.
 """
 
+import asyncio
 import time
 
 from fastapi import APIRouter, File, Form, HTTPException, UploadFile
@@ -74,6 +75,7 @@ async def parse_resume_and_jd(
     # 3. Extract skills
     try:
         resume_skills = await extract_skills(resume_text, "resume")
+        await asyncio.sleep(10)
         jd_skills = await extract_skills(jd_text, "jd")
     except RuntimeError as e:
         raise HTTPException(status_code=500, detail=str(e))
