@@ -20,7 +20,7 @@ The cost is staggering — companies spend an average of 40+ hours per employee 
 
 **SkillBridge AI** is an AI-driven adaptive learning engine that transforms onboarding from a static checklist into a personalized, skill-gap-aware learning pathway. By analyzing a new hire's resume against a target job description, SkillBridge identifies exactly what each employee needs to learn — and builds a prerequisite-ordered, time-optimized training plan grounded in a curated course catalog.
 
-- 🔍 **Resume & JD Parsing** — Extracts and normalizes skills with proficiency levels via Claude LLM
+- 🔍 **Resume & JD Parsing** — Extracts and normalizes skills with proficiency levels via Gemini 2.5 Flash
 - 📊 **Embedding-Based Skill Gap Analysis** — Computes precise gap scores using semantic similarity
 - 🗺️ **Adaptive Pathway Generation** — Builds prerequisite-aware learning paths using graph algorithms
 - 🧠 **Full Reasoning Trace** — Explains every recommendation with step-by-step transparency
@@ -29,7 +29,7 @@ The cost is staggering — companies spend an average of 40+ hours per employee 
 
 ## ✨ Key Features
 
-- ⚡ **AI-Powered Skill Extraction** — Claude 3 parses resumes and job descriptions into structured skill profiles with proficiency levels
+- ⚡ **AI-Powered Skill Extraction** — Gemini 2.5 Flash parses resumes and job descriptions into structured skill profiles with proficiency levels
 - 🔬 **Semantic Gap Detection** — MiniLM-L6-v2 embeddings + cosine similarity produce precise gap scores per skill
 - 🗺️ **AdaptPath™ Algorithm** — Graph-based, topologically sorted learning pathways with prerequisite validation
 - 🧠 **Reasoning Trace Viewer** — Step-by-step AI decision log showing why each course was selected, with confidence scores
@@ -60,7 +60,7 @@ The cost is staggering — companies spend an average of 40+ hours per employee 
 │        │               │               │                        │
 │  ┌─────▼──────┐ ┌──────▼──────┐ ┌──────▼──────┐                │
 │  │  Parser    │ │  Analyzer   │ │  Pathway    │                │
-│  │ (Claude +  │ │ (MiniLM +   │ │ (NetworkX + │                │
+│  │ (Gemini 2.5 Flash +  │ │ (MiniLM +   │ │ (NetworkX + │                │
 │  │  PyMuPDF)  │ │  Sklearn)   │ │  ChromaDB)  │                │
 │  └────────────┘ └─────────────┘ └─────────────┘                │
 │                                                                 │
@@ -75,7 +75,7 @@ The cost is staggering — companies spend an average of 40+ hours per employee 
 
 **API Layer** — FastAPI with three core endpoints (`/api/parse`, `/api/analyze`, `/api/pathway`) plus health check. Pydantic models enforce request/response validation.
 
-**Core Engine** — Parser (Claude LLM + PyMuPDF), Analyzer (sentence-transformers + scikit-learn), and Pathway Builder (NetworkX graph + ChromaDB RAG retrieval).
+**Core Engine** — Parser (Gemini 2.5 Flash + PyMuPDF), Analyzer (sentence-transformers + scikit-learn), and Pathway Builder (NetworkX graph + ChromaDB RAG retrieval).
 
 **Data Layer** — ChromaDB vector store indexes 40 course modules with embeddings for semantic retrieval. The catalog spans 8 domains from Python Programming to Safety & Compliance.
 
@@ -83,7 +83,7 @@ The cost is staggering — companies spend an average of 40+ hours per employee 
 
 1. **Land on Dashboard** → User arrives at the SkillBridge home page (or selects a Demo Mode persona)
 2. **Upload Documents** → Drag-and-drop a PDF resume + paste the target job description
-3. **AI Parsing** → Claude extracts structured skill profiles with proficiency levels from both documents
+3. **AI Parsing** → Gemini extracts structured skill profiles with proficiency levels from both documents
 4. **Gap Analysis** → System computes semantic similarity between resume skills and JD requirements, producing gap scores and priority classifications
 5. **Pathway Generation** → AdaptPath™ algorithm builds a prerequisite-ordered, topologically-sorted course sequence from the catalog
 6. **Review Results** → Interactive dashboard shows skill gap table, DAG-based pathway graph, reasoning trace, and time-saved metrics
@@ -97,7 +97,7 @@ The cost is staggering — companies spend an average of 40+ hours per employee 
 |---|---|---|
 | Python | Core runtime | 3.11+ |
 | FastAPI | REST API framework | 0.111.0 |
-| Anthropic SDK | Claude LLM integration | 0.26.0 |
+| Google Generative AI | Gemini 2.5 Flash integration | 0.8.3 |
 | sentence-transformers | Embedding generation (MiniLM-L6-v2) | 2.7.0 |
 | ChromaDB | Vector store for course catalog | 0.5.0 |
 | NetworkX | Graph algorithms (DAG, topological sort) | 3.3 |
@@ -126,18 +126,18 @@ The cost is staggering — companies spend an average of 40+ hours per employee 
 - **Python 3.11+** — [Download](https://python.org/downloads)
 - **Node.js 18+** — [Download](https://nodejs.org)
 - **Docker & Docker Compose** *(optional)* — [Download](https://docker.com)
-- **Anthropic API Key** — [Get one here](https://console.anthropic.com)
+- **Gemini API Key** — [Get one here](https://aistudio.google.com/apikey)
 
 ### Option A: Docker (Recommended)
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/skillbridge-ai.git
+git clone https://github.com/parth-shinge/skillbrigde-ai.git
 cd skillbridge-ai
 
 # Create backend environment file
 cp .env.example backend/.env
-# Edit backend/.env and set your ANTHROPIC_API_KEY
+# Edit backend/.env and set your GEMINI_API_KEY
 
 # Build and run all services
 docker-compose up --build
@@ -159,7 +159,7 @@ pip install -r requirements.txt
 
 # Create .env file
 cp ../.env.example .env
-# Edit .env and set your ANTHROPIC_API_KEY
+# Edit .env and set your GEMINI_API_KEY
 
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
@@ -178,7 +178,7 @@ Open `http://localhost:5173` in your browser.
 
 | Variable | Description | Example |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | API key for Claude LLM access | `sk-ant-api03-...` |
+| `GEMINI_API_KEY` | API key for Gemini 2.5 Flash access | `AIzaSy...` |
 | `CHROMA_PERSIST_DIR` | ChromaDB persistence directory | `./chroma_db` |
 | `STANDARD_ONBOARDING_HOURS` | Baseline hours for time-saved calculation | `40` |
 
@@ -326,7 +326,7 @@ Generate a personalized, prerequisite-ordered learning pathway.
 
 The analyzer uses a multi-stage pipeline to compute precise skill gaps:
 
-1. **Skill Extraction** — Claude LLM parses raw text into structured `{name, proficiency, years}` objects, normalizing synonyms (e.g., "ML" → "machine-learning")
+1. **Skill Extraction** — Gemini 2.5 Flash parses raw text into structured `{name, proficiency, years}` objects, normalizing synonyms (e.g., "ML" → "machine-learning")
 2. **Embedding Generation** — Each skill name is encoded into a 384-dimensional vector using `all-MiniLM-L6-v2`
 3. **Cosine Similarity Matching** — Resume skills are matched to JD skills via pairwise cosine similarity; matches above threshold 0.7 are linked
 4. **Proficiency Delta Scoring** — Gap score = `(required_level - current_level) / max_level`, using ordinal encoding: beginner=1, intermediate=2, advanced=3, expert=4
